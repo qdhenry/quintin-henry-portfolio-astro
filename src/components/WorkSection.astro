@@ -1,0 +1,58 @@
+---
+// src/components/WorkSection.astro
+import ProjectCard from './ProjectCard.astro';
+
+// Placeholder project data - replace with actual content
+// Define the type explicitly to include optional imageUrl
+type Project = {
+	title: string;
+	description: string;
+	roleStack: string;
+	impact: string;
+	imageUrl?: string; // Make imageUrl optional here
+};
+
+const projects: Project[] = [
+	{
+		title: "PetExec Onboarding + Booking",
+		description: "[Placeholder: Describe the project, challenges, and solutions related to the onboarding and booking platform.]",
+		roleStack: "[Placeholder: e.g., Lead Engineer / SvelteKit, Node.js, PostgreSQL]",
+		impact: "[Placeholder: e.g., Reduced onboarding time by X%, increased booking conversion by Y%.]",
+		// imageUrl: "/images/petexec-placeholder.jpg",
+	},
+	{
+		title: "Elden Ring Ecommerce Infra",
+		description: "[Placeholder: Detail the work done on the ecommerce infrastructure for Elden Ring.]",
+		roleStack: "[Placeholder: e.g., Platform Architect / AWS, Terraform, Go]",
+		impact: "[Placeholder: e.g., Scaled to handle X million requests per day, improved checkout performance.]",
+		// imageUrl: "/images/eldenring-placeholder.jpg",
+	},
+	{
+		title: "Automotive Redirect SaaS (Exit)",
+		description: "[Placeholder: Explain the SaaS product, its purpose, and the successful exit.]",
+		roleStack: "[Placeholder: e.g., Founder & Engineer / Node.js, React, MongoDB]",
+		impact: "[Placeholder: e.g., Acquired by [Company Name], served X customers.]",
+		// imageUrl: "/images/saas-placeholder.jpg",
+	},
+	// Add 1-2 more projects if desired
+];
+---
+
+<section id="work" class="py-16 px-4">
+	<div class="max-w-6xl mx-auto">
+		<h2 class="font-mono text-3xl md:text-4xl font-bold mb-12 text-center text-electric-blue dark:text-electric-blue">
+			Selected Work
+		</h2>
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+			{projects.map(project => (
+				<ProjectCard 
+					title={project.title}
+					description={project.description}
+					roleStack={project.roleStack}
+					impact={project.impact}
+					imageUrl={project.imageUrl}
+				/>
+			))}
+		</div>
+	</div>
+</section>
