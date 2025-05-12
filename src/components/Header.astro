@@ -2,6 +2,7 @@
 // src/components/Header.astro
 import SocialLinks from './SocialLinks.astro'; // Import the new SocialLinks component
 import { SITE_TITLE } from '../consts'; // Keep SITE_TITLE for now
+import logoSrc from '../assets/mono-kernel-logo-light.png'; // Import the logo image
 
 // Placeholder URLs - replace with actual links from ConnectSection or constants
 const GITHUB_URL = "https://github.com/quintinhenry";
@@ -11,9 +12,8 @@ const TWITTER_URL = "https://twitter.com/quintinhenry";
 
 <header class="sticky top-0 z-50 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm shadow-sm">
 	<nav class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
-		{/* Site Title/Logo */}
 		<a href="/" class="text-lg font-bold font-mono text-gray-900 dark:text-white hover:text-electric-blue dark:hover:text-electric-blue transition-colors">
-			{SITE_TITLE}
+			<img src={logoSrc.src} alt="Quintin Henry Logo" class="w-[299px]" />
 		</a>
 
 		{/* Desktop Navigation Links */}
