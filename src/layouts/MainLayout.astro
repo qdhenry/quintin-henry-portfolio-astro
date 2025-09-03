@@ -1,33 +1,36 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'; // Assuming these are still relevant or will be updated
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts"; // Assuming these are still relevant or will be updated
 
 interface Props {
-	title?: string;
-	description?: string;
+    title?: string;
+    description?: string;
 }
 
-const { 
-	title = SITE_TITLE, 
-	description = SITE_DESCRIPTION 
-} = Astro.props;
+const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
 ---
+
 <!doctype html>
-<html lang="en" class="dark"> {/* Default to dark mode */}
-	<head>
-		<BaseHead title={title} description={description} />
-	</head>
-	<body class="font-sans bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 antialiased"> {/* Apply base fonts and colors */}
-		<Header />
-		<main>
-			<slot /> {/* Page content will be injected here */}
-		</main>
-		<Footer />
-		<script>
-			// Basic script to toggle dark mode based on class, can be enhanced later
-			// Example: localStorage check or system preference check
-		</script>
-	</body>
+<html lang="en" class="dark">
+    {/* Default to dark mode */}
+
+    <BaseHead title={title} description={description} />
+
+    <body
+        class="font-sans bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 antialiased overflow-hidden"
+    >
+        {/* Apply base fonts and colors */}
+        <Header />
+        <main>
+            <slot />
+            {/* Page content will be injected here */}
+        </main>
+
+        <script>
+            // Basic script to toggle dark mode based on class, can be enhanced later
+            // Example: localStorage check or system preference check
+        </script>
+    </body>
 </html>

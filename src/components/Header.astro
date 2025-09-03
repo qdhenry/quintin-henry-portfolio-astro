@@ -1,49 +1,68 @@
 ---
 // src/components/Header.astro
-import SocialLinks from './SocialLinks.astro'; // Import the new SocialLinks component
-import { SITE_TITLE } from '../consts'; // Keep SITE_TITLE for now
-import logoSrc from '../assets/mono-kernel-logo-light.png'; // Import the logo image
+import SocialLinks from "./SocialLinks.astro"; // Import the new SocialLinks component
+import { SITE_TITLE } from "../consts"; // Keep SITE_TITLE for now
+import logoSrc from "../assets/mono-kernel-logo-light.png"; // Import the logo image
 
 // Placeholder URLs - replace with actual links from ConnectSection or constants
 const GITHUB_URL = "https://github.com/quintinhenry";
 const LINKEDIN_URL = "https://linkedin.com/in/quintinhenry";
-const TWITTER_URL = "https://twitter.com/quintinhenry"; 
 ---
 
-<header class="sticky top-0 z-50 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm shadow-sm">
-	<nav class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
-		<a href="/" class="text-lg font-bold font-mono text-gray-900 dark:text-white hover:text-electric-blue dark:hover:text-electric-blue transition-colors">
-			<img src={logoSrc.src} alt="Quintin Henry Logo" class="w-[299px]" />
-		</a>
+<header
+    class="relative top-0 z-50 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm shadow-sm h-32"
+>
+    <nav class="max-w-6xl mx-auto px-4 flex justify-between items-center">
+        <a
+            href="/"
+            class="text-lg font-bold font-mono text-gray-900 dark:text-white hover:text-electric-blue dark:hover:text-electric-blue transition-colors"
+        >
+            <img src={logoSrc.src} alt="Mono Kernel" class="w-[299px]" />
+        </a>
 
-		{/* Desktop Navigation Links */}
-		<div class="hidden md:flex items-center space-x-6">
-			<a href="#about" class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-electric-blue dark:hover:text-electric-blue transition-colors">About</a>
-			<a href="#work" class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-electric-blue dark:hover:text-electric-blue transition-colors">Work</a>
-			{/* Add Writing link here if section is included */}
-			{/* <a href="#writing" class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-electric-blue dark:hover:text-electric-blue transition-colors">Writing</a> */}
-			<a href="#connect" class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-electric-blue dark:hover:text-electric-blue transition-colors">Connect</a>
-			
-			{/* Social Links integrated into desktop header */}
-			<div class="pl-4 border-l border-gray-200 dark:border-gray-700">
-				<SocialLinks 
-					githubUrl={GITHUB_URL} 
-					linkedinUrl={LINKEDIN_URL} 
-					twitterUrl={TWITTER_URL} 
-				/>
-			</div>
-		</div>
+        {/* Desktop Navigation Links */}
+        <div class="hidden md:flex items-center space-x-6">
+            <a
+                href={LINKEDIN_URL}
+                class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-electric-blue dark:hover:text-electric-blue transition-colors"
+                >Connect</a
+            >
 
-		{/* Mobile Menu Button (Placeholder - functionality to be added later) */}
-		<div class="md:hidden">
-			<button type="button" aria-label="Open menu" class="text-gray-600 dark:text-gray-300 hover:text-electric-blue dark:hover:text-electric-blue">
-				{/* Basic Menu Icon SVG */}
-				<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-				</svg>
-			</button>
-		</div>
-	</nav>
-	{/* Mobile Menu Panel (Placeholder - content and toggle logic needed) */}
-	{/* <div class="md:hidden hidden" id="mobile-menu"> ... </div> */}
+            {/* Social Links integrated into desktop header */}
+            <div class="pl-4 border-l border-gray-200 dark:border-gray-700">
+                <SocialLinks
+                    githubUrl={GITHUB_URL}
+                    linkedinUrl={LINKEDIN_URL}
+                />
+            </div>
+        </div>
+
+        {
+            /* Mobile Menu Button (Placeholder - functionality to be added later) */
+        }
+        <div class="md:hidden">
+            <button
+                type="button"
+                aria-label="Open menu"
+                class="text-gray-600 dark:text-gray-300 hover:text-electric-blue dark:hover:text-electric-blue"
+            >
+                {/* Basic Menu Icon SVG */}
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+    {/* Mobile Menu Panel (Placeholder - content and toggle logic needed) */}
+    {/* <div class="md:hidden hidden" id="mobile-menu"> ... </div> */}
 </header>

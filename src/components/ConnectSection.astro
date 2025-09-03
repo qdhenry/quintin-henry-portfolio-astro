@@ -1,40 +1,42 @@
 ---
 // src/components/ConnectSection.astro
-import SocialLinks from './SocialLinks.astro';
-import Button from './Button.astro'; // Import Button if using a direct email CTA
+import SocialLinks from "./SocialLinks.astro";
+import Button from "./Button.astro"; // Import Button if using a direct email CTA
 
 // Placeholder URLs - replace with actual links
 const GITHUB_URL = "https://github.com/quintinhenry";
 const LINKEDIN_URL = "https://linkedin.com/in/quintinhenry";
-const TWITTER_URL = "https://twitter.com/quintinhenry"; 
 ---
 
 <section id="connect" class="py-16 px-4 bg-gray-100 dark:bg-gray-800">
-	<div class="max-w-3xl mx-auto text-center">
-		<h2 class="font-mono text-3xl md:text-4xl font-bold mb-8 text-electric-blue dark:text-electric-blue">
-			Connect
-		</h2>
-		
-		<p class="mb-8 text-lg text-gray-700 dark:text-gray-300">
-			Let's build something together. Reach out via social media or the contact method below.
-		</p>
+    <div class="max-w-3xl mx-auto text-center">
+        <h2
+            class="font-mono text-3xl md:text-4xl font-bold mb-8 text-electric-blue dark:text-electric-blue"
+        >
+            Connect
+        </h2>
 
-		<div class="mb-12">
-			<SocialLinks 
-				githubUrl={GITHUB_URL} 
-				linkedinUrl={LINKEDIN_URL} 
-				twitterUrl={TWITTER_URL} 
-			/>
-		</div>
+        <p class="mb-8 text-lg text-gray-700 dark:text-gray-300">
+            Let's build something together. Reach out via social media or the
+            contact method below.
+        </p>
 
-		<!-- Placeholder for Contact Method -->
-		<div class="mt-8 border-t border-gray-300 dark:border-gray-700 pt-8">
-			<h3 class="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-200">Contact Option Placeholder</h3>
-			<p class="text-gray-600 dark:text-gray-400">
-				[Placeholder: Implement Contact Form component, Calendly embed, or a direct email Button CTA here based on final decision.]
-				<!-- Example: <Button href="mailto:your.email@example.com" variant="primary">Send Email</Button> -->
-			</p>
-		</div>
-		
-	</div>
+        <div class="mb-12">
+            <SocialLinks githubUrl={GITHUB_URL} linkedinUrl={LINKEDIN_URL} />
+        </div>
+
+        <!-- Placeholder for Contact Method -->
+        <div class="mt-8 border-t border-gray-300 dark:border-gray-700 pt-8">
+            <h3
+                class="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-200"
+            >
+                Contact Option Placeholder
+            </h3>
+            <p class="text-gray-600 dark:text-gray-400">
+                [Placeholder: Implement Contact Form component, Calendly embed,
+                or a direct email Button CTA here based on final decision.]
+                <!-- Example: <Button href="mailto:your.email@example.com" variant="primary">Send Email</Button> -->
+            </p>
+        </div>
+    </div>
 </section>

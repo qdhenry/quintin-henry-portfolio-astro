@@ -1,29 +1,30 @@
 ---
 // src/pages/index.astro
-import MainLayout from '../layouts/MainLayout.astro';
-import HeroSection from '../components/HeroSection.astro';
-import AboutSection from '../components/AboutSection.astro';
-import WorkSection from '../components/WorkSection.astro';
-import ConnectSection from '../components/ConnectSection.astro';
+import MainLayout from "../layouts/MainLayout.astro";
+import HeroSection from "../components/HeroSection.astro";
+import AboutSection from "../components/AboutSection.astro";
+import WorkSection from "../components/WorkSection.astro";
+import ConnectSection from "../components/ConnectSection.astro";
 // Optional: Import WritingSection if implemented
 // import WritingSection from '../components/WritingSection.astro';
 
 // Define page-specific metadata
-const pageTitle = "Quintin Henry // build silent :: ship loud"; // Or use SITE_TITLE from consts
-const pageDescription = "Portfolio of Quintin Henry, a senior software engineer, strategist, and founder."; // Or use SITE_DESCRIPTION
+const pageTitle = "build silent :: ship loud"; // Or use SITE_TITLE from consts
+const pageDescription =
+    "Portfolio of Quintin Henry, a senior software engineer, strategist, and founder."; // Or use SITE_DESCRIPTION
 ---
 
 <MainLayout title={pageTitle} description={pageDescription}>
-	
-	<HeroSection />
+    <HeroSection />
 
-	<AboutSection />
+    {
+        /*
+        <AboutSection />
+       	<WorkSection />
 
-	<WorkSection />
-
-	{/* Optional: Include WritingSection here if implemented */}
-	{/* <WritingSection /> */}
+	{/* Optional: Include WritingSection here if implemented 	{/* <WritingSection />
 
 	<ConnectSection />
-
+	*/
+    }
 </MainLayout>
